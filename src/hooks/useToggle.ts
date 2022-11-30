@@ -5,7 +5,9 @@ type ToggleProps = {
 };
 
 // Parameter is the boolean, with default "false" value. I decided to stick to object as a parameter because it is more convenient
-export const useTaggle = ({ initialState = false }: ToggleProps) => {
+export const useToggle = (
+  { initialState = false } = {} as ToggleProps
+): [boolean, () => void] => {
   // Initiailize the state
   const [state, setState] = useState(initialState);
 
