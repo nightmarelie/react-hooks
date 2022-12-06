@@ -1,8 +1,14 @@
-// Hook
-export const useMemoCompare = (next, compare) => {
+import { useEffect, useRef } from "react";
+
+type MemoCompareProps<T> = {
+  next: T;
+  compare: (prev: T, next: T) => boolean;
+};
+
+export const useMemoCompare = <T>({ next, compare }: MemoCompareProps<T>) => {
   // Ref for storing previous value
-  const previousRef = useRef();
-  const previous = previousRef.current;
+  const previousRef = useRef<T>();
+  const previous = previousRef.current as T;
   // Pass previous and next value to compare function
   // to determine whether to consider them equal.
   const isEqual = compare(previous, next);
