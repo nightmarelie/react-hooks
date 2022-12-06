@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
-
-import { Toggler, ShowCase, ObjectCompare, Obj, buildObj } from "./components";
+import {
+  Toggler,
+  ShowCase,
+  ObjectCompare,
+  useObjectCompareCase,
+} from "./components";
 
 function App() {
-  const [obj, setObj] = useState<Obj>(buildObj());
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      console.log("changed");
-      setObj(buildObj({ id: "test-2", value: "changed" }));
-    }, 5000);
-
-    return () => clearTimeout(timeout);
-  }, []);
+  const [obj] = useObjectCompareCase();
 
   return (
     <div className="App">

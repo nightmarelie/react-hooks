@@ -47,3 +47,27 @@ export const buildObj = ({ id = "test-1", value = "lol" } = {} as BuildObj) => {
       ),
   };
 };
+
+export const useObjectCompareCase = () => {
+  const [obj, setObj] = useState<Obj>(buildObj());
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log("changed");
+      setObj(buildObj({ id: "test-2", value: "changed" }));
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log("lol");
+      setObj(buildObj({ id: "test-1", value: "lol" }));
+    }, 10000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return [obj];
+};
