@@ -1,4 +1,4 @@
-function useFirestoreQuery(query) {
+export const useFirestoreQuery = (query) => {
   // Our initial state
   // Start with an "idle" status if query is falsy, as that means hook consumer is
   // waiting on required data before creating the query object.
@@ -42,4 +42,4 @@ function useFirestoreQuery(query) {
     );
   }, [queryCached]); // Only run effect if queryCached changes
   return state;
-}
+};
