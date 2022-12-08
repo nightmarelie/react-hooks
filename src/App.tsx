@@ -3,6 +3,7 @@ import {
   ShowCase,
   ObjectCompare,
   useObjectCompareCase,
+  AsyncCall,
 } from "./components";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useMemoCompare. Memo compare in the action">
         <ObjectCompare obj={obj} />
+      </ShowCase>
+      <ShowCase title="useAsync.">
+        <AsyncCall />
       </ShowCase>
     </div>
   );
