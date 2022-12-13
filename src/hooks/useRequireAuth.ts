@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 // import { useAuth } from "./useAuth.js";
-// import { useRouter } from "./useRouter.js";
+import { useRouter } from "./useRouter.js";
 
 const useAuth = () => ({ user: {} });
-const useRouter = () => ({ push: (_: string) => true });
 
 type RequireAuthProps = {
   redirectUrl: string;
