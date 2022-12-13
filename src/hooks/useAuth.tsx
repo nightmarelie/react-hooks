@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  FC,
+} from "react";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 
