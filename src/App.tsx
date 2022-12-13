@@ -4,6 +4,7 @@ import {
   ObjectCompare,
   useObjectCompareCase,
   AsyncCall,
+  MouseListener,
 } from "./components";
 
 function App() {
@@ -20,8 +21,11 @@ function App() {
       <ShowCase title="useMemoCompare. Memo compare in the action">
         <ObjectCompare obj={obj} />
       </ShowCase>
-      <ShowCase title="useAsync.">
+      <ShowCase title="useAsync">
         <AsyncCall />
+      </ShowCase>
+      <ShowCase title="useEventListener. Mouse Listener">
+        <MouseListener />
       </ShowCase>
     </div>
   );
