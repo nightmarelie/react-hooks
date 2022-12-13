@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import queryString from "query-string";
 
-export function useRouter() {
+export const useRouter = () => {
   const params = useParams();
   const location = useLocation();
   const history = useHistory();
@@ -34,4 +34,4 @@ export function useRouter() {
       history,
     };
   }, [params, match, location, history]);
-}
+};
