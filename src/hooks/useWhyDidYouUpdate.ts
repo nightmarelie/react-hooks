@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 type WhyDidYouUpdate = {
   name: string;
-  props: Record<string, string>;
+  props: Record<string, any>;
 };
 
 type ChangesObj = {

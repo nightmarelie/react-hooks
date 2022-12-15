@@ -5,6 +5,7 @@ import {
   useObjectCompareCase,
   AsyncCall,
   MouseListener,
+  ExpensiveComp,
 } from "./components";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useEventListener. Mouse Listener">
         <MouseListener />
+      </ShowCase>
+      <ShowCase title="useWhyDidYouUpdate">
+        <ExpensiveComp />
       </ShowCase>
     </div>
   );
