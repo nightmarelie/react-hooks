@@ -3,3 +3,4 @@ export * from "./useMemoCompare";
 export * from "./useAsync";
 export * from "./useEventListener";
 export * from "./useWhyDidYouUpdate";
+export * from "./useLocalStorage";

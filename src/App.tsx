@@ -6,6 +6,7 @@ import {
   AsyncCall,
   MouseListener,
   ExpensiveComp,
+  NameSaver,
 } from "./components";
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useWhyDidYouUpdate">
         <ExpensiveComp />
+      </ShowCase>
+      <ShowCase title="useLocalStorage">
+        <NameSaver />
       </ShowCase>
     </div>
   );
