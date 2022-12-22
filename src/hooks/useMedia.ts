@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 
-type MediaProps = {
+type MediaProps<T> = {
   queries: string[];
-  values: number[];
-  defaultValue: number;
+  values: T[];
+  defaultValue: T;
 };
 
-export const useMedia = ({ queries, values, defaultValue }: MediaProps) => {
+export const useMedia = <T>({
+  queries,
+  values,
+  defaultValue,
+}: MediaProps<T>) => {
   // Array containing a media query list for each query
   const mediaQueryLists = queries.map((q) => window.matchMedia(q));
   console.log("mediaQueryLists-->", mediaQueryLists);
@@ -20,7 +24,7 @@ export const useMedia = ({ queries, values, defaultValue }: MediaProps) => {
   };
 
   // State and setter for matched value
-  const [value, setValue] = useState(getValue);
+  const [value, setValue] = useState<T>(getValue);
 
   useEffect(
     () => {
