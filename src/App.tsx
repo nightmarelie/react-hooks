@@ -7,6 +7,7 @@ import {
   MouseListener,
   ExpensiveComp,
   NameSaver,
+  Columns,
 } from "./components";
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useLocalStorage">
         <NameSaver />
+      </ShowCase>
+      <ShowCase title="useMedia">
+        <Columns />
       </ShowCase>
     </div>
   );
