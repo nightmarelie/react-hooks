@@ -8,6 +8,7 @@ import {
   ExpensiveComp,
   NameSaver,
   Columns,
+  ToggleMode,
 } from "./components";
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useMedia">
         <Columns />
+      </ShowCase>
+      <ShowCase title="useDarkMode">
+        <ToggleMode />
       </ShowCase>
     </div>
   );
