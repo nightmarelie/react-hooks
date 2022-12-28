@@ -1,7 +1,24 @@
 import { useCallback, useReducer } from "react";
 
+// Initial state that we pass into useReducer
+const initialState = {
+  // Array of previous state values updated each time we push a new state
+  past: [],
+  // Current state value
+  present: null,
+  // Will contain "future" state values if we undo (so we can redo)
+  future: [],
+};
+
+type Action = {
+  type: string;
+  payload: any;
+  newPresent: any;
+  initialPresent: any;
+};
+
 // Our reducer function to handle state changes based on action
-const reducer = (state, action) => {
+const reducer = (state: typeof initialState, action: Action) => {
   const { past, present, future } = state;
   switch (action.type) {
     case "UNDO":
