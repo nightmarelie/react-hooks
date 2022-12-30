@@ -9,6 +9,7 @@ import {
   NameSaver,
   Columns,
   ToggleMode,
+  KeyPress,
 } from "./components";
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useDarkMode">
         <ToggleMode />
+      </ShowCase>
+      <ShowCase title="useKeyPress">
+        <KeyPress />
       </ShowCase>
     </div>
   );
