@@ -11,7 +11,7 @@ enum Status {
   ERROR = "error",
 }
 
-const useScript = ({ src }: ScriptProps) => {
+export const useScript = ({ src }: ScriptProps) => {
   // Keep track of script status ("idle", "loading", "ready", "error")
   const [status, setStatus] = useState<Status>(
     src ? Status.LOADING : Status.IDLE

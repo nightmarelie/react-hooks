@@ -8,3 +8,4 @@ export * from "./useMedia";
 export * from "./useDarkMode";
 export * from "./useKeyPress";
 export * from "./useDebounce";
+export * from "./useScript";
