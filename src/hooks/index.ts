@@ -10,3 +10,4 @@ export * from "./useKeyPress";
 export * from "./useDebounce";
 export * from "./useScript";
 export * from "./useOnScreen";
+export * from "./usePrevious";
