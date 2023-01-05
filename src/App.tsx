@@ -10,6 +10,7 @@ import {
   Columns,
   ToggleMode,
   KeyPress,
+  MyCounter,
 } from "./components";
 
 function App() {
@@ -46,6 +47,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useKeyPress">
         <KeyPress />
+      </ShowCase>
+      <ShowCase title="usePrevious">
+        <MyCounter />
       </ShowCase>
     </div>
   );
