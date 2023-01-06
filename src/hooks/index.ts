@@ -11,3 +11,4 @@ export * from "./useDebounce";
 export * from "./useScript";
 export * from "./useOnScreen";
 export * from "./usePrevious";
+export * from "./useOnClickOutside";
