@@ -12,6 +12,7 @@ import {
   KeyPress,
   MyCounter,
   MyModal,
+  MyHover,
 } from "./components";
 
 function App() {
@@ -54,6 +55,9 @@ function App() {
       </ShowCase>
       <ShowCase title="useOnClickOutside">
         <MyModal />
+      </ShowCase>
+      <ShowCase title="useHover">
+        <MyHover />
       </ShowCase>
     </div>
   );
