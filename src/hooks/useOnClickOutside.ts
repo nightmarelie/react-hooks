@@ -4,7 +4,7 @@ type EventOutside = MouseEvent | TouchEvent;
 
 type OnClickOutsideProps = {
   ref: RefObject<any>;
-  handler: (event: EventOutside) => void;
+  handler: (event?: EventOutside) => void;
 };
 
 export const useOnClickOutside = ({ ref, handler }: OnClickOutsideProps) => {
@@ -17,6 +17,7 @@ export const useOnClickOutside = ({ ref, handler }: OnClickOutsideProps) => {
         }
         handler(event);
       };
+
       document.addEventListener("mousedown", listener);
       document.addEventListener("touchstart", listener);
       return () => {

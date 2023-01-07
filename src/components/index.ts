@@ -9,3 +9,4 @@ export * from "./Columns";
 export * from "./ToggleMode";
 export * from "./KeyPress";
 export * from "./MyCounter";
+export * from "./MyModal";

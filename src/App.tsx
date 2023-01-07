@@ -11,6 +11,7 @@ import {
   ToggleMode,
   KeyPress,
   MyCounter,
+  MyModal,
 } from "./components";
 
 function App() {
@@ -50,6 +51,9 @@ function App() {
       </ShowCase>
       <ShowCase title="usePrevious">
         <MyCounter />
+      </ShowCase>
+      <ShowCase title="useOnClickOutside">
+        <MyModal />
       </ShowCase>
     </div>
   );
