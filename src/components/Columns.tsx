@@ -1,4 +1,4 @@
-import { useMedia } from "../hooks";
+import { useMedia } from '../hooks';
 
 type DataProps = {
   height: number;
@@ -9,11 +9,7 @@ type DataProps = {
 export const Columns = () => {
   const columnCount = useMedia<number>({
     // Media queries
-    queries: [
-      "(min-width: 1500px)",
-      "(min-width: 1000px)",
-      "(min-width: 600px)",
-    ],
+    queries: ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
     // Column counts (relates to above media queries by array index)
     values: [5, 4, 3],
     // Default column count
@@ -22,20 +18,18 @@ export const Columns = () => {
   // Create array of column heights (start at 0)
   let columnHeights = new Array(columnCount).fill(0);
   // Create array of arrays that will hold each column's items
-  let columns = new Array(columnCount).fill(null).map(() => []) as Array<
-    DataProps[]
-  >;
+  let columns = new Array(columnCount).fill(null).map(() => []) as Array<DataProps[]>;
 
   const data: DataProps[] = [
     {
       height: 100,
       width: 100,
-      image: "http://i.pravatar.cc/80?img=1",
+      image: 'http://i.pravatar.cc/80?img=1',
     },
     {
       height: 100,
       width: 100,
-      image: "http://i.pravatar.cc/80?img=2",
+      image: 'http://i.pravatar.cc/80?img=2',
     },
   ];
 
@@ -58,7 +52,7 @@ export const Columns = () => {
                 className="image-container"
                 style={{
                   // Size image container to aspect ratio of image
-                  paddingTop: item.height / item.width + "%",
+                  paddingTop: item.height / item.width + '%',
                 }}
               >
                 <img src={item.image} alt="" />

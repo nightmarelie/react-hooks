@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import { useMemoCompare } from "../hooks";
+import React, { FC, useEffect, useState } from 'react';
+import { useMemoCompare } from '../hooks';
 
 export type Obj = {
   id: string;
@@ -38,13 +38,10 @@ type BuildObj = {
   value: string;
 };
 
-export const buildObj = ({ id = "test-1", value = "lol" } = {} as BuildObj) => {
+export const buildObj = ({ id = 'test-1', value = 'lol' } = {} as BuildObj) => {
   return {
     id,
-    someMethod: () =>
-      new Promise<string>((resolve) =>
-        setTimeout((text) => resolve(text), 1000, value)
-      ),
+    someMethod: () => new Promise<string>((resolve) => setTimeout((text) => resolve(text), 1000, value)),
   };
 };
 
@@ -53,8 +50,8 @@ export const useObjectCompareCase = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log("changed");
-      setObj(buildObj({ id: "test-2", value: "changed" }));
+      console.log('changed');
+      setObj(buildObj({ id: 'test-2', value: 'changed' }));
     }, 5000);
 
     return () => clearTimeout(timeout);
@@ -62,8 +59,8 @@ export const useObjectCompareCase = () => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      console.log("lol");
-      setObj(buildObj({ id: "test-1", value: "lol" }));
+      console.log('lol');
+      setObj(buildObj({ id: 'test-1', value: 'lol' }));
     }, 10000);
 
     return () => clearTimeout(timeout);

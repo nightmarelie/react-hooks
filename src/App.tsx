@@ -13,7 +13,7 @@ import {
   MyCounter,
   MyModal,
   MyHover,
-} from "./components";
+} from './components';
 
 function App() {
   const [obj] = useObjectCompareCase();

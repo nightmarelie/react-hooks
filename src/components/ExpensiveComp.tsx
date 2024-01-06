@@ -1,5 +1,5 @@
-import { memo, useMemo, useState } from "react";
-import { useWhyDidYouUpdate } from "../hooks";
+import { memo, useMemo, useState } from 'react';
+import { useWhyDidYouUpdate } from '../hooks';
 
 type CountProps = {
   style: Record<string, string>;
@@ -7,7 +7,7 @@ type CountProps = {
 };
 
 const Counter = memo((props: CountProps) => {
-  useWhyDidYouUpdate({ name: "Counter", props });
+  useWhyDidYouUpdate({ name: 'Counter', props });
   return <div style={props.style}>{props.count}</div>;
 });
 
@@ -21,8 +21,8 @@ export const ExpensiveComp = () => {
   // Thanks to our hook we figured this out and realized we should probably ...
   // ... move this object outside of the component body.
   const counterStyle = {
-    fontSize: "3rem",
-    color: "red",
+    fontSize: '3rem',
+    color: 'red',
   };
 
   // const counterStyle = useMemo(
@@ -39,10 +39,7 @@ export const ExpensiveComp = () => {
         <button onClick={() => setCount(count + 1)}>Increment</button>
       </div>
       <div className="user">
-        <img
-          src={`http://i.pravatar.cc/80?img=${userId}`}
-          alt={String(userId)}
-        />
+        <img src={`http://i.pravatar.cc/80?img=${userId}`} alt={String(userId)} />
         <button onClick={() => setUserId(userId + 1)}>Switch User</button>
       </div>
     </div>

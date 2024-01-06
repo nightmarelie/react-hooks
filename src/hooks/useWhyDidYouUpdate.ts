@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 type WhyDidYouUpdate = {
   name: string;
@@ -34,7 +34,7 @@ export const useWhyDidYouUpdate = ({ name, props }: WhyDidYouUpdate) => {
       });
       // If changesObj not empty then output to console
       if (Object.keys(changesObj).length) {
-        console.log("[why-did-you-update]", name, changesObj);
+        console.log('[why-did-you-update]', name, changesObj);
       }
     }
     // Finally update previousProps with current props for next hook call

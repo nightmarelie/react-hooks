@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 // import { useAuth } from "./useAuth";
-import { useRouter } from "./useRouter";
+import { useRouter } from './useRouter';
 
 const useAuth = () => ({ user: {} });
 
@@ -8,9 +8,7 @@ type RequireAuthProps = {
   redirectUrl: string;
 };
 
-export const useRequireAuth = ({
-  redirectUrl = "/signup",
-}: RequireAuthProps) => {
+export const useRequireAuth = ({ redirectUrl = '/signup' }: RequireAuthProps) => {
   const auth = useAuth();
   const router = useRouter();
   // If auth.user is false that means we're not

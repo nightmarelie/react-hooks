@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import { useEffect, RefObject } from 'react';
 
 type EventOutside = MouseEvent | TouchEvent;
 
@@ -18,11 +18,11 @@ export const useOnClickOutside = ({ ref, handler }: OnClickOutsideProps) => {
         handler(event);
       };
 
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
+      document.addEventListener('mousedown', listener);
+      document.addEventListener('touchstart', listener);
       return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
+        document.removeEventListener('mousedown', listener);
+        document.removeEventListener('touchstart', listener);
       };
     },
     // Add ref and handler to effect dependencies
@@ -31,6 +31,6 @@ export const useOnClickOutside = ({ ref, handler }: OnClickOutsideProps) => {
     // ... callback/cleanup to run every render. It's not a big deal ...
     // ... but to optimize you can wrap handler in useCallback before ...
     // ... passing it into this hook.
-    [ref, handler]
+    [ref, handler],
   );
 };

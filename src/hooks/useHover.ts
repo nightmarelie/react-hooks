@@ -1,4 +1,4 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
 
 // T - could be any type of HTML element like: HTMLDivElement, HTMLParagraphElement and etc.
 // hook returns tuple(array) with type [any, boolean]
@@ -13,15 +13,15 @@ export const useHover = <T>(): [MutableRefObject<T>, boolean] => {
     () => {
       const node: any = ref.current;
       if (node) {
-        node.addEventListener("mouseover", handleMouseOver);
-        node.addEventListener("mouseout", handleMouseOut);
+        node.addEventListener('mouseover', handleMouseOver);
+        node.addEventListener('mouseout', handleMouseOut);
         return () => {
-          node.removeEventListener("mouseover", handleMouseOver);
-          node.removeEventListener("mouseout", handleMouseOut);
+          node.removeEventListener('mouseover', handleMouseOver);
+          node.removeEventListener('mouseout', handleMouseOut);
         };
       }
     },
-    [ref.current] // Recall only if ref changes
+    [ref.current], // Recall only if ref changes
   );
   return [ref, value];
 };

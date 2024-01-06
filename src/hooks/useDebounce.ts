@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type DebounceProps<T> = {
   value: T;
@@ -21,7 +21,7 @@ export const useDebounce = <T>({ value, delay }: DebounceProps<T>) => {
         clearTimeout(handler);
       };
     },
-    [value, delay] // Only re-call effect if value or delay changes
+    [value, delay], // Only re-call effect if value or delay changes
   );
   return debouncedValue;
 };

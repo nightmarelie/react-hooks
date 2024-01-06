@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type MediaProps<T> = {
   queries: string[];
@@ -6,11 +6,7 @@ type MediaProps<T> = {
   defaultValue: T;
 };
 
-export const useMedia = <T>({
-  queries,
-  values,
-  defaultValue,
-}: MediaProps<T>) => {
+export const useMedia = <T>({ queries, values, defaultValue }: MediaProps<T>) => {
   // Array containing a media query list for each query
   const mediaQueryLists = queries.map((q) => window.matchMedia(q));
 
@@ -19,7 +15,7 @@ export const useMedia = <T>({
     // Get index of first media query that matches
     const index = mediaQueryLists.findIndex((mql) => mql.matches);
     // Return related value or defaultValue if none
-    return typeof values[index] !== "undefined" ? values[index] : defaultValue;
+    return typeof values[index] !== 'undefined' ? values[index] : defaultValue;
   };
 
   // State and setter for matched value
@@ -34,10 +30,9 @@ export const useMedia = <T>({
       // Set a listener for each media query with above handler as callback.
       mediaQueryLists.forEach((mql) => mql.addListener(handler));
       // Remove listeners on cleanup
-      return () =>
-        mediaQueryLists.forEach((mql) => mql.removeListener(handler));
+      return () => mediaQueryLists.forEach((mql) => mql.removeListener(handler));
     },
-    [] // Empty array ensures effect is only run on mount and unmount
+    [], // Empty array ensures effect is only run on mount and unmount
   );
 
   return value;

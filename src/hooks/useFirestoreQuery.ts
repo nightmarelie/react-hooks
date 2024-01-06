@@ -1,11 +1,11 @@
-import { useEffect, useReducer } from "react";
-import { useMemoCompare } from "./useMemoCompare";
+import { useEffect, useReducer } from 'react';
+import { useMemoCompare } from './useMemoCompare';
 
 export enum Status {
-  IDLE = "idle",
-  PENDING = "pending",
-  SUCCESS = "success",
-  ERROR = "iderrorle",
+  IDLE = 'idle',
+  PENDING = 'pending',
+  SUCCESS = 'success',
+  ERROR = 'iderrorle',
 }
 
 type State<T = undefined, E = undefined> = {
@@ -37,7 +37,7 @@ const reducer = <T, E>(_: State<T, E>, action: Action<T | E>) => {
     case Status.ERROR:
       return { status: action.type, data: undefined, error: action.payload };
     default:
-      throw new Error("invalid action");
+      throw new Error('invalid action');
   }
 };
 
@@ -77,14 +77,12 @@ export const useFirestoreQuery = ({ query }: FirestoreQueryProps) => {
     return queryCached.onSnapshot(
       (response: any) => {
         // Get data for collection or doc
-        const data = response.docs
-          ? getCollectionData(response)
-          : getDocData(response);
+        const data = response.docs ? getCollectionData(response) : getDocData(response);
         dispatch({ type: Status.SUCCESS, payload: data });
       },
       (error: any) => {
         dispatch({ type: Status.ERROR, payload: error });
-      }
+      },
     );
   }, [queryCached]); // Only run effect if queryCached changes
   return state;

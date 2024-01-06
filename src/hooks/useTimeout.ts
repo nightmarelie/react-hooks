@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export const useTimeout = (handler: () => void, timeoutInSeconds = 5) => {
   useEffect(() => {

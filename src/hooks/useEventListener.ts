@@ -1,4 +1,4 @@
-import { useEffect, useRef, SyntheticEvent } from "react";
+import { useEffect, useRef, SyntheticEvent } from 'react';
 
 type EventListenerProps<E extends SyntheticEvent> = {
   eventName: string;
@@ -12,7 +12,7 @@ export const useEventListener = <E extends SyntheticEvent>({
   element = window,
 }: EventListenerProps<E>) => {
   // Create a ref that stores handler
-  const savedHandler = useRef<EventListenerProps<E>["handler"]>();
+  const savedHandler = useRef<EventListenerProps<E>['handler']>();
   // Update ref.current value if handler changes.
   // This allows our effect below to always get latest handler ...
   // ... without us needing to pass it in effect deps array ...
@@ -27,8 +27,7 @@ export const useEventListener = <E extends SyntheticEvent>({
       const isSupported = element && element.addEventListener;
       if (!isSupported || !savedHandler.current) return;
       // Create event listener that calls handler function stored in ref
-      const eventListener = (event: Event) =>
-        savedHandler.current && savedHandler.current(event as unknown as E);
+      const eventListener = (event: Event) => savedHandler.current && savedHandler.current(event as unknown as E);
       // Add event listener
       element.addEventListener(eventName, eventListener);
       // Remove event listener on cleanup
@@ -36,6 +35,6 @@ export const useEventListener = <E extends SyntheticEvent>({
         element.removeEventListener(eventName, eventListener);
       };
     },
-    [eventName, element] // Re-run if eventName or element changes
+    [eventName, element], // Re-run if eventName or element changes
   );
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import { useDarkMode } from "../hooks";
+import React from 'react';
+import { useDarkMode } from '../hooks';
 
 export const ToggleMode = () => {
   const [darkMode, setDarkMode] = useDarkMode();
@@ -11,9 +11,9 @@ export const ToggleMode = () => {
       </div>
       <div
         style={{
-          width: "300px",
-          height: "300px",
-          backgroundColor: darkMode ? "black" : "red",
+          width: '300px',
+          height: '300px',
+          backgroundColor: darkMode ? 'black' : 'red',
         }}
       />
     </div>

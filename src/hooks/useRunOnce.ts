@@ -1,29 +1,27 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from 'react';
 
 export type useRunOnceProps = {
-    fn: () => any;
-    sessionKey?: string;
+  fn: () => any;
+  sessionKey?: string;
 };
 
-const useRunOnce: React.FC<useRunOnceProps> = ({fn, sessionKey}) => {
-    const triggered = useRef<boolean>(false);
+const useRunOnce: React.FC<useRunOnceProps> = ({ fn, sessionKey }) => {
+  const triggered = useRef<boolean>(false);
 
-    useEffect(() => {
-        const hasBeenTriggered = sessionKey
-            ? sessionStorage.getItem(sessionKey)
-            : triggered.current;
+  useEffect(() => {
+    const hasBeenTriggered = sessionKey ? sessionStorage.getItem(sessionKey) : triggered.current;
 
-        if (!hasBeenTriggered) {
-            fn();
-            triggered.current = true;
+    if (!hasBeenTriggered) {
+      fn();
+      triggered.current = true;
 
-            if (sessionKey) {
-                sessionStorage.setItem(sessionKey, "true");
-            }
-        }
-    }, [fn, sessionKey]);
+      if (sessionKey) {
+        sessionStorage.setItem(sessionKey, 'true');
+      }
+    }
+  }, [fn, sessionKey]);
 
-    return null;
+  return null;
 };
 
 export default useRunOnce;

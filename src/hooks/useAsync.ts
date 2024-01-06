@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 type AsyncProps<T, E> = {
   asyncFunction: () => Promise<T | E>;
@@ -6,16 +6,13 @@ type AsyncProps<T, E> = {
 };
 
 export enum Status {
-  IDLE = "idle",
-  PENDING = "pending",
-  SUCCESS = "success",
-  ERROR = "iderrorle",
+  IDLE = 'idle',
+  PENDING = 'pending',
+  SUCCESS = 'success',
+  ERROR = 'iderrorle',
 }
 
-export const useAsync = <T, E>({
-  asyncFunction,
-  immediate = true,
-}: AsyncProps<T, E>) => {
+export const useAsync = <T, E>({ asyncFunction, immediate = true }: AsyncProps<T, E>) => {
   const [status, setStatus] = useState<Status>(Status.IDLE);
   const [value, setValue] = useState<T | null>(null);
   const [error, setError] = useState<E | null>(null);

@@ -1,6 +1,6 @@
-import React, { useCallback, useState, MouseEvent } from "react";
+import React, { useCallback, useState, MouseEvent } from 'react';
 
-import { useEventListener } from "../hooks";
+import { useEventListener } from '../hooks';
 
 type MousePoint = {
   x: number;
@@ -17,11 +17,11 @@ export const MouseListener = () => {
       // Update coordinates
       setCoords({ x: clientX, y: clientY });
     },
-    [setCoords]
+    [setCoords],
   );
   // Add event listener using our hook
   useEventListener<MouseEvent<HTMLElement>>({
-    eventName: "mousemove",
+    eventName: 'mousemove',
     handler,
   });
   return (

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { usePrevious } from "../hooks";
+import { usePrevious } from '../hooks';
 
 export const MyCounter = () => {
   // State value and setter for our example

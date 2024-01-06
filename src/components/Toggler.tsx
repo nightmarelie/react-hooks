@@ -1,11 +1,7 @@
-import { useToggle } from "../hooks";
+import { useToggle } from '../hooks';
 
 export const Toggler = () => {
   const [isTextChanged, setTextChanged] = useToggle();
 
-  return (
-    <button onClick={setTextChanged}>
-      {isTextChanged ? "Toggled" : "Click to Toggle"}
-    </button>
-  );
+  return <button onClick={setTextChanged}>{isTextChanged ? 'Toggled' : 'Click to Toggle'}</button>;
 };

@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect } from 'react';
 
 interface Theme {
   [name: string]: string;
@@ -13,6 +13,6 @@ export const useTheme = (theme: Theme): void => {
         document.documentElement.style.setProperty(`--${key}`, theme[key]);
       }
     },
-    [theme] // Only call again if theme object reference changes
+    [theme], // Only call again if theme object reference changes
   );
 };

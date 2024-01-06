@@ -1,5 +1,5 @@
-import React, { useRef, useState } from "react";
-import { useOnClickOutside } from "../hooks";
+import React, { useRef, useState } from 'react';
+import { useOnClickOutside } from '../hooks';
 
 export const MyModal = () => {
   // Create a ref that we add to the element for which we want to detect outside clicks
@@ -11,9 +11,7 @@ export const MyModal = () => {
   return (
     <div>
       {isModalOpen ? (
-        <div ref={ref}>
-          👋 Hey, I'm a modal. Click anywhere outside of me to close.
-        </div>
+        <div ref={ref}>👋 Hey, I'm a modal. Click anywhere outside of me to close.</div>
       ) : (
         <button onClick={() => setModalOpen(true)}>Open Modal</button>
       )}

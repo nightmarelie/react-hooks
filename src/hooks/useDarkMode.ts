@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useLocalStorage } from "./useLocalStorage";
-import { useMedia } from "./useMedia";
+import { useEffect } from 'react';
+import { useLocalStorage } from './useLocalStorage';
+import { useMedia } from './useMedia';
 
 export function useDarkMode(): [boolean, (mode: boolean) => void] {
   // Use our useLocalStorage hook to persist state through a page refresh.
   // Read the recipe for this hook to learn more: usehooks.com/useLocalStorage
   const [enabledState, setEnabledState] = useLocalStorage<boolean>({
-    key: "dark-mode-enabled",
+    key: 'dark-mode-enabled',
     initialValue: false,
   });
   // See if user has set a browser or OS preference for dark mode.
@@ -18,7 +18,7 @@ export function useDarkMode(): [boolean, (mode: boolean) => void] {
   // Fire off effect that add/removes dark mode class
   useEffect(
     () => {
-      const className = "dark-mode";
+      const className = 'dark-mode';
       const element = window.document.body;
       if (enabled) {
         element.classList.add(className);
@@ -26,7 +26,7 @@ export function useDarkMode(): [boolean, (mode: boolean) => void] {
         element.classList.remove(className);
       }
     },
-    [enabled] // Only re-call effect when value changes
+    [enabled], // Only re-call effect when value changes
   );
   // Return enabled state and setter
   return [enabled, setEnabledState];
@@ -38,7 +38,7 @@ export function useDarkMode(): [boolean, (mode: boolean) => void] {
 // Read the recipe for useMedia to learn more: usehooks.com/useMedia
 function usePrefersDarkMode() {
   return useMedia<boolean>({
-    queries: ["(prefers-color-scheme: dark)"],
+    queries: ['(prefers-color-scheme: dark)'],
     values: [true],
     defaultValue: false,
   });
