@@ -28,3 +28,4 @@ export * from './usePolling';
 export * from './useLockBody';
 export * from './useNetworkState';
 export * from './useBoolean';
+export * from './useCounter';
