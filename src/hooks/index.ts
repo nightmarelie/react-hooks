@@ -18,3 +18,5 @@ export * from './useTimeout';
 export * from './useRunOnce';
 export * from './useThrottledValue';
 export * from './useThrottledFunction';
+export * from './useEnhancedEffect';
+export * from './useClick';
