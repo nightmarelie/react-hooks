@@ -20,3 +20,4 @@ export * from './useThrottledValue';
 export * from './useThrottledFunction';
 export * from './useEnhancedEffect';
 export * from './useClick';
+export * from './useHandleEscape';
