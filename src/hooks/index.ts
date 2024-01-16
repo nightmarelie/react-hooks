@@ -23,3 +23,4 @@ export * from './useClick';
 export * from './useHandleEscape';
 export * from './useOuterClick';
 export * from './usePortal';
+export * from './useSpacing';
