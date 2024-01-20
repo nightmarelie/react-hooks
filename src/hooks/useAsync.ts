@@ -16,6 +16,7 @@ export const useAsync = <T, E>({ asyncFunction, immediate = true }: AsyncProps<T
   const [status, setStatus] = useState<Status>(Status.IDLE);
   const [value, setValue] = useState<T | null>(null);
   const [error, setError] = useState<E | null>(null);
+
   // The execute function wraps asyncFunction and
   // handles setting state for pending, value, and error.
   // useCallback ensures the below useEffect is not called
@@ -33,6 +34,7 @@ export const useAsync = <T, E>({ asyncFunction, immediate = true }: AsyncProps<T
       setStatus(Status.ERROR);
     }
   }, [asyncFunction]);
+
   // Call execute if we want to fire it right away.
   // Otherwise execute can be called later, such as
   // in an onClick handler.
