@@ -25,3 +25,4 @@ export * from './useOuterClick';
 export * from './usePortal';
 export * from './useSpacing';
 export * from './usePolling';
+export * from './useLockBody';
